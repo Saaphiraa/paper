@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Feminina do Câncer</title>
+    <script type="text/javascript" src="main.js"></script>
+
+    <style>
+        #listaPatrocinadores{ display: none; }
+        #cadastroPatrocinadores{ 
+            display: none;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        body[page=lista] #listaPatrocinadores {display: block;}
+        body[page=cadastro] #cadastroPatrocinadores {display: flex;}
+
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+        }
+
+        table{
+            width: 100%;
+            margin-top: 6rem;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td{
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid 1px #f8c8d6;
+        }
+        
+        div.cima{
+
+            margin: 0 0 0 69rem;
+        }
+
+        button.bc{
+            border:none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: rgba(9, 40, 112, 0.823);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        div.baixo{
+            margin: 3rem 0 0 30rem;
+        }
+
+        button{
+            border-radius: 3px;
+            margin-left: 5rem;
+            padding: 1rem 4rem;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button.green{
+            background-color: rgba(18, 129, 18, 0.817);
+            color: #fff;
+        }
+
+        
+        button.cinza{
+            background-color: rgba(119, 104, 104, 0.817);
+            color: #fff;
+        }
+
+        button:hover{
+            opacity: 0.9;
+        }
+        
+
+        input{
+            border: solid 1px #ccc;
+            border-radius: 3px ;
+            padding: 10px 15px;
+        }
+
+                
+        .classi>div{
+            display: flex;
+        }
+        
+        .classi>div>input{
+           flex: 1;
+        }
+
+    </style>
+
+</head>
+<body page="lista">
+
+
+
+    <div id="listaPatrocinadores">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>RegistroPatrocinadores</th>
+                    <th>CNPJ</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                </tr>
+            </thead>
+            <tbody id="listaRegistroBody"></tbody>
+
+            <div class="cima">
+                <div>
+                    <button onclick="vizualizar('cadastro')" class="bc">Cadastrar - patrocinador</button>
+                 </div>
+            </div>
+
+        </table>
+
+    </div>
+
+    <form id="cadastroPatrocinadores">
+
+        <div class="classi">
+            <div>Registro Patrocinadores</div>
+            <div>
+                <input type="number" readonly id="Registro">
+            </div>
+        </div>
+
+         <div class="classi">
+            <div>CNPJ</div>
+            <div>
+                <input id="CNPJ"/>
+            </div>
+        </div>
+
+         <div class="classi">
+            <div>E-mail</div>
+            <div>
+                <input type="email" id="Email">
+            </div>
+        </div>
+
+        <div class="classi">
+            <div>Celular</div>
+            <div>
+                <input type="tel" id="Celular">
+            </div>
+        </div>
+
+        
+        <div class="baixo">
+             <div>
+                <button class="green">Registrar</button>
+                <button onclick="vizualizar('lista')" class="cinza" type="button">Voltar</button>
+             </div>
+        </div>
+
+    </form>
+    
+</body>
+</html>
